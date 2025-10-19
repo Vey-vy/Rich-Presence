@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vey RPC Configurator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rich Presence Configuration</h1>
+        <div class="image-management">
+            <p>To use your own images, first upload them to the Discord developer portal, then use their name as the
+                "key" below.</p>
+            <button id="manage-images-btn" class="btn-secondary">Manage My Images</button>
+        </div>
+
+        <form id="rpc-form">
+            <fieldset>
+                <legend>Connection</legend>
+                <label>
+                    Discord Client ID
+                    <input type="text" name="clientId" placeholder="Enter your Client ID here" required>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Status Content</legend>
+                <label>
+                    Details (Line 1)
+                    <input type="text" name="details" value="Developing an app" required>
+                </label>
+                <label>
+                    State (Line 2)
+                    <input type="text" name="state" value="with Electron & TS">
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Images</legend>
+                <div class="form-row">
+                    <label class="form-group">
+                        Large Image Key
+                        <input type="text" name="largeImageKey" placeholder="e.g., typescript_logo" required>
+                    </label>
+                    <label class="form-group">
+                        Small Image Key
+                        <input type="text" name="smallImageKey" placeholder="e.g., vscode_logo">
+                    </label>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn">Update Presence</button>
+        </form>
+        <p id="status-message" class="status"></p>
+    </div>
+</body>
+
+</html>
